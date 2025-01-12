@@ -1,0 +1,79 @@
+.material-icons {
+  font-size: 24px;
+}
+
+.sub-sidebar {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.chevron-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+[data-theme="light"] {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+[data-theme="dark"] {
+  background-color: #1e293b;
+  color: #f3f4f6;
+}
+
+[data-theme="dark"] .sidebar {
+  background-color: #2d3748;
+}
+
+[data-theme="dark"] .card {
+  background-color: #374151;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.header-gradient {
+  background: linear-gradient(135deg, #24447f 0%, #1a365d 100%);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    z-index: 50;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+  }
+
+  .overlay.active {
+    display: block;
+  }
+}

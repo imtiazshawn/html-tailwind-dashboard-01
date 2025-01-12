@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/4.0.0/font/MaterialIcons-Regular.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans leading-normal tracking-normal">
+  <!-- Overlay for mobile sidebar -->
+  <div id="overlay" class="overlay" onclick="closeMobileSidebar()"></div>
+
+  <div class="flex">
+    <!-- Main Sidebar -->
+    <aside id="mainSidebar" class="w-64 sidebar bg-primary text-white flex flex-col h-screen transition-all duration-300">
+      <div class="flex items-center justify-between h-20 px-4 border-b border-opacity-20 border-white">
+        <h1 class="text-2xl font-bold sidebar-text">Logo</h1>
+        <button onclick="toggleSidebar()" class="p-2 rounded bg-opacity-20 hover:bg-opacity-40 hidden md:block">
+          <span class="material-icons">menu</span>
+        </button>
+        <button onclick="closeMobileSidebar()" class="p-2 rounded bg-opacity-20 hover:bg-opacity-40 md:hidden">
+          <span class="material-icons">close</span>
+        </button>
+      </div>
+      <div class="p-4 flex-1 overflow-y-auto">
+        <div class="flex items-center space-x-4">
+          <img class="w-12 h-12 rounded-full" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+          <div class="sidebar-text">
+            <h3 class="font-medium">Imtiaz Shawn</h3>
+            <p class="text-sm opacity-80">Administrator</p>
+          </div>
+        </div>
+        <nav class="mt-6">
+          <ul>
+            <li class="mb-2">
+              <a href="#" class="flex items-center p-3 rounded hover:bg-opacity-75 space-x-3">
+                <span class="material-icons">dashboard</span>
+                <span class="sidebar-text">Dashboard</span>
+              </a>
+            </li>
+            <li class="mb-2">
+              <button onclick="toggleSubSidebar()" class="flex items-center w-full justify-between p-3 rounded hover:bg-opacity-75">
+                <div class="flex items-center space-x-3">
+                  <span class="material-icons">folder</span>
+                  <span class="sidebar-text">Parent Item</span>
+                </div>
+                <span class="material-icons chevron-icon sidebar-text" id="chevronIcon">chevron_right</span>
+              </button>
+              <ul id="subSidebar" class="ml-4 mt-2 sub-sidebar">
+                <li>
+                  <a href="#" class="flex items-center p-2 rounded hover:bg-opacity-75 space-x-3">
+                    <span class="material-icons">description</span>
+                    <span class="sidebar-text">Child 1</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center p-2 rounded hover:bg-opacity-75 space-x-3">
+                    <span class="material-icons">description</span>
+                    <span class="sidebar-text">Child 2</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="mb-2">
+              <a href="#" class="flex items-center p-3 rounded hover:bg-opacity-75 space-x-3">
+                <span class="material-icons">assignment</span>
+                <span class="sidebar-text">Forms</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center p-3 rounded hover:bg-opacity-75 space-x-3">
+                <span class="material-icons">table_chart</span>
+                <span class="sidebar-text">Tables</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="p-4 border-t border-opacity-20 border-white">
+        <a href="#" class="flex items-center p-3 rounded hover:bg-opacity-75 space-x-3">
+          <span class="material-icons">logout</span>
+          <span class="sidebar-text">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+      <!-- Header -->
+      <header class="header-gradient shadow-lg relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
+        
+        <!-- Mobile and Desktop Layout -->
+        <div class="relative flex flex-col p-4 md:p-6 space-y-4">
+          <!-- First Row -->
+          <div class="flex items-center justify-between md:space-x-4">
+            <!-- Menu Button -->
+            <button 
+              onclick="toggleMobileMenu()" 
+              class="p-2 rounded-lg bg-white/10 hover:bg-white/20 md:hidden"
+            >
+              <span class="material-icons text-white">menu</span>
+            </button>
+            
+            <!-- Left: Title -->
+            <div class="flex items-center space-x-4">
+              <div class="bg-white/10 p-2 rounded-lg">
+                <span class="material-icons text-white text-2xl">dashboard</span>
+              </div>
+              <div>
+                <h2 class="text-2xl md:text-3xl font-bold text-white">Dashboard</h2>
+                <p class="text-blue-100 text-sm hidden md:block">Welcome back, Imtiaz!</p>
+              </div>
+            </div>
+
+            <!-- Right: Input & Others (Desktop) -->
+            <div class="hidden md:flex items-center ml-auto space-x-4">
+              <!-- Search Bar -->
+              <div class="relative w-64">
+                <input 
+                  type="text" 
+                  placeholder="Search..." 
+                  class="search-input w-full px-4 py-2 rounded-lg text-white placeholder-blue-200 focus:outline-none"
+                >
+                <span class="material-icons absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-200">search</span>
+              </div>
+              
+              <!-- Action Buttons -->
+              <div class="flex items-center space-x-2">
+                <button class="glass-effect p-2 rounded-lg hover:bg-white/20 transition-colors">
+                  <span class="material-icons text-white">notifications</span>
+                </button>
+                <button class="glass-effect p-2 rounded-lg hover:bg-white/20 transition-colors">
+                  <span class="material-icons text-white">settings</span>
+                </button>
+                <button 
+                  id="darkModeToggle" 
+                  class="glass-effect p-2 rounded-lg hover:bg-white/20 transition-colors" 
+                  onclick="toggleDarkMode()"
+                >
+                  🌙
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Row (Mobile Only) -->
+          <div class="flex items-center space-x-4 md:hidden">
+            <!-- Search Bar -->
+            <div class="relative flex-1">
+              <input 
+                type="text" 
+                placeholder="Search..." 
+                class="search-input w-full px-4 py-2 rounded-lg text-white placeholder-blue-200 focus:outline-none"
+              >
+              <span class="material-icons absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-200">search</span>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="flex items-center space-x-2">
+              <button class="glass-effect p-2 rounded-lg hover:bg-white/20 transition-colors">
+                <span class="material-icons text-white">notifications</span>
+              </button>
+              <button class="glass-effect p-2 rounded-lg hover:bg-white/20 transition-colors">
+                <span class="material-icons text-white">settings</span>
+              </button>
+              <button 
+                id="darkModeToggleMobile" 
+                class="glass-effect p-2 rounded-lg hover:bg-white/20 transition-colors" 
+                onclick="toggleDarkMode()"
+              >
+                🌙
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Here add the Contents -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
