@@ -36,10 +36,18 @@ function toggleSubSidebar() {
 
 function toggleSidebar() {
   const sidebar = document.getElementById("mainSidebar");
-  const isCollapsed = sidebar.classList.contains("w-20");
+  const main = document.querySelector("main");
 
   sidebar.classList.toggle("w-64");
   sidebar.classList.toggle("w-20");
+
+  if (sidebar.classList.contains("w-64")) {
+    main.classList.add("md:ml-64");
+    main.classList.remove("md:ml-20");
+  } else {
+    main.classList.add("md:ml-20");
+    main.classList.remove("md:ml-64");
+  }
 
   const textElements = sidebar.querySelectorAll(".sidebar-text");
   textElements.forEach((el) => el.classList.toggle("hidden"));

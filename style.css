@@ -2,6 +2,14 @@
   font-size: 24px;
 }
 
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+}
+
 .sub-sidebar {
   max-height: 0;
   overflow: hidden;
