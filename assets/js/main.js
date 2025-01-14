@@ -1,18 +1,3 @@
-tailwind.config = {
-  darkMode: 'class',
-  theme: {
-    extend: {
-      colors: {
-        primary: "#24447f",
-        darkPrimary: "#2d3748",
-        lightBg: '#f3f4f6',
-        darkBg: '#1e293b',
-        cardBg: "#374151"
-      },
-    },
-  },
-};
-
 function toggleDarkMode() {
   const html = document.documentElement;
   html.classList.toggle("dark");

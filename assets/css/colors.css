@@ -1,0 +1,62 @@
+/* 01: Default */
+/* :root {
+  --primary: #24447f;
+  --secondary: #3460b2;
+  --darkPrimary: #2d3748;
+} */
+
+/* 02: Earthy and Warm Palette */
+/* :root {
+  --primary: #5a3f37;
+  --secondary: #cd9777;
+  --darkPrimary: #2a1a15;
+} */
+
+/* 03: Minimal Monochrome */
+/* :root {
+  --primary: #2e2e2e;
+  --secondary: #4a4a4a;
+  --darkPrimary: #1b1b1b;
+} */
+
+/* 04: Oceanic Blues */
+/* :root {
+  --primary: #004e92;
+  --secondary: #0093e9;
+  --darkPrimary: #001f3f;
+} */
+
+/* 05: Arctic Blues */
+/* :root {
+  --primary: #0e7490;
+  --secondary: #38bdf8;
+  --darkPrimary: #164e63;
+} */
+
+/* 06: Forest Greens */
+:root {
+  --primary: #2a9d8f;
+  --secondary: #e9c46a;
+  --darkPrimary: #264653;
+}
+
+/* 07: Royal Purple Elegance */
+/* :root {
+  --primary: #7c3aed;
+  --secondary: #a78bfa;
+  --darkPrimary: #4c1d95;
+} */
+
+/* 08: Dark Royal */
+/* :root {
+  --primary: #4c1d95;
+  --secondary: #9333ea;
+  --darkPrimary: #2e1065;
+} */
+
+/* 09: Obsidian Purple */
+/* :root {
+  --primary: #6a0dad;
+  --secondary: #1c1b29;
+  --darkPrimary: #3e0960;
+} */
