@@ -9,13 +9,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="font-sans leading-normal tracking-normal">
+<body class="font-sans leading-normal tracking-normal h-screen bg-lightBg dark:bg-darkBg">
   <!-- Overlay for mobile sidebar -->
   <div id="overlay" class="overlay" onclick="closeMobileSidebar()"></div>
 
   <div class="flex">
     <!-- Main Sidebar -->
-    <aside id="mainSidebar" class="w-64 sidebar bg-primary text-white flex flex-col h-screen transition-all duration-300">
+    <aside id="mainSidebar" class="w-64 sidebar bg-primary dark:bg-darkPrimary text-white flex flex-col h-screen transition-all duration-300">
       <div class="flex items-center justify-between h-20 px-4 border-b border-opacity-20 border-white">
         <h1 class="text-2xl font-bold sidebar-text">Logo</h1>
         <button onclick="toggleSidebar()" class="p-2 rounded bg-opacity-20 hover:bg-opacity-40 hidden md:block">
@@ -35,7 +35,7 @@
         </div>
         <nav class="mt-6">
           <ul>
-            <li>
+            <li class="active-sidebar-item">
               <a href="#" class="flex items-center p-3 rounded hover:bg-opacity-75 space-x-3">
                 <span class="material-icons">dashboard</span>
                 <span class="sidebar-text">Dashboard</span>

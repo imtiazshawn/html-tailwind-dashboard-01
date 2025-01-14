@@ -1,3 +1,9 @@
+:root {
+  --primary: #24447f;
+  --secondary: #3460b2;
+  --darkPrimary: #2d3748;
+}
+
 .material-icons {
   font-size: 24px;
 }
@@ -8,6 +14,11 @@
   bottom: 0;
   left: 0;
   z-index: 50;
+}
+
+.active-sidebar-item {
+  background-color: var(--secondary);
+  border-radius: 5px;
 }
 
 header {
@@ -39,24 +50,6 @@ main {
   transition: transform 0.3s ease-in-out;
 }
 
-[data-theme="light"] {
-  background-color: #f3f4f6;
-  color: #111827;
-}
-
-[data-theme="dark"] {
-  background-color: #1e293b;
-  color: #f3f4f6;
-}
-
-[data-theme="dark"] .sidebar {
-  background-color: #2d3748;
-}
-
-[data-theme="dark"] .card {
-  background-color: #374151;
-}
-
 .glass-effect {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -75,7 +68,7 @@ main {
 }
 
 .header-gradient {
-  background: linear-gradient(135deg, #24447f 0%, #1a365d 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--darkPrimary) 100%);
 }
 
 @media (max-width: 768px) {

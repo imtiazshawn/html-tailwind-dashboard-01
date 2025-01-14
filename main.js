@@ -1,8 +1,13 @@
 tailwind.config = {
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         primary: "#24447f",
+        darkPrimary: "#2d3748",
+        lightBg: '#f3f4f6',
+        darkBg: '#1e293b',
+        cardBg: "#374151"
       },
     },
   },
@@ -10,16 +15,16 @@ tailwind.config = {
 
 function toggleDarkMode() {
   const html = document.documentElement;
-  const currentTheme = html.getAttribute("data-theme");
-  const newTheme = currentTheme === "light" ? "dark" : "light";
-  html.setAttribute("data-theme", newTheme);
+  html.classList.toggle("dark");
 
+  const currentTheme = html.classList.contains("dark") ? "dark" : "light";
   const toggleButton = document.getElementById("darkModeToggle");
   const toggleButtonMobile = document.getElementById("darkModeToggleMobile");
-  const newIcon = newTheme === "light" ? "🌙" : "☀️";
+  const newIcon = currentTheme === "light" ? "🌙" : "☀️";
   toggleButton.innerHTML = newIcon;
   toggleButtonMobile.innerHTML = newIcon;
 }
+
 
 function toggleSubSidebar() {
   const subSidebar = document.getElementById("subSidebar");
