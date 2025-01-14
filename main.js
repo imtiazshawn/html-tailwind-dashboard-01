@@ -37,6 +37,7 @@ function toggleSubSidebar() {
 function toggleSidebar() {
   const sidebar = document.getElementById("mainSidebar");
   const main = document.querySelector("main");
+  const header = document.querySelector("header");
 
   sidebar.classList.toggle("w-64");
   sidebar.classList.toggle("w-20");
@@ -44,9 +45,13 @@ function toggleSidebar() {
   if (sidebar.classList.contains("w-64")) {
     main.classList.add("md:ml-64");
     main.classList.remove("md:ml-20");
+    header.classList.add("expanded");
+    header.classList.remove("collapsed");
   } else {
     main.classList.add("md:ml-20");
     main.classList.remove("md:ml-64");
+    header.classList.add("collapsed");
+    header.classList.remove("expanded");
   }
 
   const textElements = sidebar.querySelectorAll(".sidebar-text");

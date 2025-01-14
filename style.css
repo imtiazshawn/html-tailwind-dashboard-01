@@ -10,6 +10,25 @@
   z-index: 50;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  z-index: 40;
+  width: calc(100% - 16rem);
+}
+
+header.expanded {
+  width: calc(100% - 16rem);
+}
+
+header.collapsed {
+  width: calc(100% - 1rem);
+}
+
+main {
+  margin-top: 5rem;
+}
+
 .sub-sidebar {
   max-height: 0;
   overflow: hidden;
@@ -67,6 +86,22 @@
     bottom: 0;
     z-index: 50;
     transition: left 0.3s ease-in-out;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  header.expanded {
+    width: 100%;
+  }
+  
+  header.collapsed {
+    width: 100%;
+  }
+
+  main {
+    margin-top: 8rem;
   }
 
   .sidebar.open {
