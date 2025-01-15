@@ -90,7 +90,6 @@ tailwind.config = {
 
 // 06: Forest Greens
 /*
-*/
 tailwind.config = {
   darkMode: "class",
   theme: {
@@ -105,6 +104,7 @@ tailwind.config = {
     },
   },
 };
+*/
 
 // 07: Royal Purple Elegance
 /*
@@ -160,3 +160,20 @@ tailwind.config = {
   },
 };
 */
+
+
+// 10: Midnight Blue Elegance
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#083464",
+        darkPrimary: "#061d3b",
+        lightBg: "#f0f4fa",
+        darkBg: "#0a1128",
+        cardBg: "#102a43",
+      },
+    },
+  },
+};

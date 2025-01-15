@@ -34,11 +34,11 @@
 } */
 
 /* 06: Forest Greens */
-:root {
+/* :root {
   --primary: #2a9d8f;
   --secondary: #e9c46a;
   --darkPrimary: #264653;
-}
+} */
 
 /* 07: Royal Purple Elegance */
 /* :root {
@@ -60,3 +60,10 @@
   --secondary: #1c1b29;
   --darkPrimary: #3e0960;
 } */
+
+/* 10: Midnight Blue Elegance */
+:root {
+  --primary: #083464;
+  --secondary: #0f52ba;
+  --darkPrimary: #061d3b;
+}
